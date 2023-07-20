@@ -3,7 +3,7 @@ import Header from "./listing";
 import {NoteContext} from "./listing"
 
 
-const Filter = ({handleFilterInputButton}) => {
+const Filter = () => {
     const [getRadio1,setRadio1] = useState(false);
     const [getRadio2,setRadio2] = useState(false);
     const [getRadio3,setRadio3] = useState(false);
@@ -19,7 +19,7 @@ const Filter = ({handleFilterInputButton}) => {
             if (getRadio3 ==true) {
               setRadio3(!getRadio3);
             }
-            handleFilterInputButton("less than 100")
+            // handleFilterInputButton("less than 100")
         }
            
             
@@ -29,12 +29,12 @@ const Filter = ({handleFilterInputButton}) => {
         if(event) {
             setRadio2(!getRadio2);
             if(getRadio1 ==true) {
-              setRadio2(!getRadio1);
+              setRadio1(!getRadio1);
             }
             if (getRadio3 ==true) {
               setRadio3(!getRadio3);
             }
-            handleFilterInputButton("less than 500");
+            // handleFilterInputButton("less than 500");
         }
         
     };
@@ -45,16 +45,17 @@ const Filter = ({handleFilterInputButton}) => {
               setRadio2(!getRadio2);
             }
             if (getRadio1 == true) {
-              setRadio3(!getRadio1);
+              setRadio1(!getRadio1);
             }
             // From here how can i call the handleFilterInput() function of listing.js file inside header function?
-            handleFilterInputButton("greater than 500");
+            // handleFilterInputButton("greater than 500");
         }
         
     };
+    return [getRadio1,getRadio2,getRadio3,Radio1,Radio2,Radio3];
   return (
     <>
-      <div className="m-4 container contents">
+      {/* <div className="m-4 container contents">
         <div className="card-body border border-1 w-full h-96 m-4 border-solid rounded-lg border-yellow-600">
           <div className="">
             <div className="text-sm">Filter</div>
@@ -76,7 +77,7 @@ const Filter = ({handleFilterInputButton}) => {
             
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 }
